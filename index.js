@@ -7,6 +7,7 @@ const app=express()
 app.use(require('./routes'))
 app.use(require('./routes/operate'))
 app.use(require('./routes/retrieve'))
+app.use(require('./routes/update'))
 
 
 
