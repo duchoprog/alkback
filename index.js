@@ -1,7 +1,11 @@
 const express= require('express')
+var cors = require('cors')
 
 //Create express server
 const app=express()
+
+//Add CORS
+app.use(cors())
 
 //Routes
 app.use(require('./routes'))
