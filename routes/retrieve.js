@@ -10,7 +10,7 @@ router.get('/retrieve', (req, res)=>{
     db.query(sql, (err, results)=>{
         if(err) throw err;  
            
-        res.send(results)   
+        res.send(Object.assign({}, results))   
     })
 
 })
