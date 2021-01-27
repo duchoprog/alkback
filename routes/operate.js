@@ -2,13 +2,15 @@ const express = require('express');
 const router = express.Router();
 const db= require('../src/db-connection')
 
+
+router.use(express.json())
 router.post('/operate', (req, res)=>{
-    
-    res.send ("Hello operate")
-db.query(sql, (err, result)=>{
-    if(err) throw err;
-    res.send()
-})
+
+    let data=(req.body)
+    let sql= "INSERT INTO transactions SET ?"
+    db.query(sql, data, (err, result)=>{
+        if(err) throw err;        
+    })
 
 })
 
