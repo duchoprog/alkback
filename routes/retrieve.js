@@ -20,7 +20,6 @@ router.get('/retrieve', (req, res) => {
     db.query(sql, (err, results) => {
         if (err) throw err;
         results.unshift({ balance: getBalance(results) })
-        console.log(results)
         res.send(Object.assign({}, results.slice(0, 11)))
     })
 
