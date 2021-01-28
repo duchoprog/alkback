@@ -9,7 +9,12 @@ router.post('/operate', (req, res) => {
     let data = (req.body)
     let sql = "INSERT INTO transactions SET ?"
     db.query(sql, data, (err, result) => {
-        if (err) throw err;
+        if (err) {
+            res.send({ message: 'Error' })
+            throw err
+        };
+        res.send({ message: 'OK' })
+
     })
 
 })
