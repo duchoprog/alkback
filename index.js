@@ -1,8 +1,8 @@
-const express= require('express')
+const express = require('express')
 var cors = require('cors')
 
 //Create express server
-const app=express()
+const app = express()
 
 //Add CORS
 app.use(cors())
@@ -12,6 +12,7 @@ app.use(require('./routes'))
 app.use(require('./routes/operate'))
 app.use(require('./routes/retrieve'))
 app.use(require('./routes/update'))
+app.use(require('./routes/delete'))
 
 
 
@@ -21,6 +22,6 @@ app.use(require('./routes/update'))
 
 
 // Listen for petitions
-app.listen (4000, ()=>{
+app.listen(4000, () => {
     console.log("Server running on port 4000")
 })
